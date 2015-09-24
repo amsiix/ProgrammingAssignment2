@@ -15,13 +15,9 @@ makeCacheMatrix <- function(x = matrix()) {
     # define each of the setter/getter functions
     
     set <- function(y) {
-        # Sets the matrix object to 'x', and initial NULL inverse 'i'.
-        # As neither 'x' nor 'i' are defined within the function, 
-        # they correspond to the 'x' and 'i' in the this function's 
-        # defined environment, namely 'x' is the argument to the parent function,
-        # and i is defined in the parent function as well.
-        x <<- y
-        i <<- NULL
+        
+        x <<- y # cache the original matrix
+        i <<- NULL # set the inverse to NULL
     }
     
     get <- function() { x } # returns the original matrix
